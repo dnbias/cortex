@@ -38,6 +38,10 @@ function updateLinkStatuses() {
 // Fetches note at href, and then removes all notes up to level, and inserts the new note
 function fetchNote(href, level) {
   if (pages.indexOf(href) > -1) return;
+  if (href.includes("/tags/")) {
+    window.open(href); // not pretty but works
+    return;
+  }
   level = Number(level) || pages.length;
 
   const request = new Request(href);

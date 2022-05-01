@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ range sort .Site.Taxonomies.tags }}
+<div class="content">
+<li>
+  <a class="badge badge-tag-list-page" href="{{ .Page.Permalink }}"><i class="fas fa-tags"></i> {{ .Page.Title }} ({{ .Count }})</a>
+</li>
+</div>
+{{ end }}
+{{ end }}
