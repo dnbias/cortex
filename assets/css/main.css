@@ -1,9 +1,8 @@
-@import url("https://rsms.me/inter/inter.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
 
 html,
 body {
-  <!-- font-family: "Inter", sans-serif; -->
-  font-family: -apple-system, system-ui, BlinkMacSystemFont
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-flow: column;
   background: #fafafc;
@@ -12,11 +11,12 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  counter-reset: h2counter;
 }
 
 @supports (font-variation-settings: normal) {
   html {
-    font-family: "Inter var", sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 }
 
@@ -31,11 +31,64 @@ h6 {
 
 h1 {
   margin-bottom: 0px;
+  counter-reset: h2counter;
 }
 
 h2 {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
+  counter-reset: h3counter;
+}
+
+h3 {
+  counter-reset: h4counter;
+}
+
+h4 {
+  counter-reset: h5counter;
+}
+
+.content h2:before {
+    content: counter(h2counter) "\0000a0\0000a0";
+    counter-increment: h2counter;
+    color: #8d8d8d;
+    font-size: 0.8em;
+}
+
+.content h3:before {
+    content: counter(h2counter) "." counter(h3counter) "\0000a0\0000a0";
+    counter-increment: h3counter;
+    color: #8d8d8d;
+    font-size: 0.8em;
+}
+
+.content h4:before {
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "\0000a0\0000a0";
+    counter-increment: h4counter;
+    color: #8d8d8d;
+    font-size: 0.8em;
+}
+
+.content h5:before {
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "\0000a0\0000a0";
+    counter-increment: h5counter;
+    color: #8d8d8d;
+    font-size: 0.8em;
+}
+
+.content h1 {
+  display: inline;
+}
+
+.content time {
+  margin-left: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #303030;
+  background-color: #F2F2f2;
+  border-radius: 4px;
+  padding: 0px 3px 0px 3px;
+  font-size: 1em;
 }
 
 h1 {
@@ -56,6 +109,12 @@ h4 {
 
 p {
   margin-bottom: 1em;
+}
+
+
+ol,
+ul {
+  padding-left: 5px;
 }
 
 header {
@@ -118,6 +177,38 @@ header {
 
 .content {
   padding: 32px;
+}
+
+.terms {
+  padding: 2px;
+
+}
+
+.tags a {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    margin: 0 8px 8px 0;
+    padding: 0 10px 0 12px;
+    background: #7a7;
+    border-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    color: #fff;
+    font-size: 11px;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
+    text-decoration: none;
+    text-shadow: 0.25px 1px 2px rgba(0.5,0.5,0.5,0.5);
+    font-weight: bold;
+}
+
+.tags sup {
+  font-size: 0.6em;
+  font-weight: medium;
+  padding-left: -5px;
 }
 
 a {
@@ -195,6 +286,9 @@ iframe {
   color: #aaa;
   margin-top: 0;
 }
+.bl-section h4:before {
+  content: "";
+}
 
 .backlinks a {
   flex: 100%;
@@ -236,6 +330,15 @@ dt + dt + dd {
 #search {
   margin-left: 5px;
 }
+
+.search-submit {
+  border-radius: 6px;
+  color: #000000;
+  background-color: #dddddd;
+  border-style: solid;
+  border-color: #333333;
+}
+
 
 .search-extract {
   margin-left: 10px;

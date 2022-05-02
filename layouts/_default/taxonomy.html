@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="content">
-  <h3>{{ .Title  }}</h3>
+  <h1>{{ .Title  }}</h1><br>
   {{ range .Pages }}
     <li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>
    {{ end }}
