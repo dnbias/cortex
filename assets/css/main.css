@@ -95,14 +95,15 @@ h4 {
 }
 
 .content time {
-  margin-left: 10px;
+  margin-left: 5px;
   border-style: solid;
   border-width: 1px;
   border-color: #303030;
   background-color: #F2F2f2;
   border-radius: 4px;
-  padding: 0px 3px 0px 3px;
+  padding: 0px 3px 0px 0px;
   font-size: 1em;
+  white-space: nowrap;
 }
 
 h1 {
@@ -179,6 +180,7 @@ header {
   overflow-y: auto;
   vertical-align: top;
   box-sizing: border-box;
+  counter-reset: h2counter;
 }
 
 .wide {
@@ -203,8 +205,8 @@ header {
     height: 20px;
     line-height: 20px;
     position: relative;
-    margin: 0 8px 8px 0;
-    padding: 0 10px 0 12px;
+    margin: 8px 8px 8px 0px;
+    padding: 0px 10px 0px 12px;
     background: #7a7;
     border-radius: 10px;
     -webkit-border-bottom-right-radius: 10px;
