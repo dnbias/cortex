@@ -404,3 +404,55 @@ dt + dt + dd {
     display: none;
   }
 }
+
+.table-of-contents {
+  float: right;
+  width: 30%;
+  font-size: 0.8em;
+  padding:1em 1em 1em 2em;
+  margin: 0 0 0.5em 0.5em;
+  counter-reset: licounter;
+}
+.table-of-contents header {
+  padding 0;
+  margin 0 0 0 0;
+}
+.table-of-contents ul {
+  padding: 0;
+}
+.table-of-contents li {
+  margin: 0 0 0.25em 0;
+}
+.table-of-contents a {
+  text-decoration: none;
+}
+.table-of-contents a:hover,
+.table-of-contents a:active {
+  text-decoration: underline;
+}
+.table-of-contents ul {
+  list-style-type: none;
+  counter-increment: licounter1;
+}
+.table-of-contents ol {
+  list-style-type: none;
+  color: #8d8d8d;
+  counter-reset: item;
+  padding-left: 10px;
+}
+.table-of-contents ol > li:before {
+    content: counters(item, ".") "\0000a0\0000a0";
+    color: #8d8d8d;
+    font-size: 0.8em;
+}
+.table-of-contents ol > li {
+    counter-increment: item;
+}
+.table-of-contents ol ol > li {
+    display: block;
+}
+.table-of-contents ol ol > li:before {
+    content: counters(item, ".") "\0000a0\0000a0";
+    color: #8d8d8d;
+    font-size: 0.8em;
+}

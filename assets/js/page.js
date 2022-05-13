@@ -72,7 +72,7 @@ function fetchNote(href, level) {
 
 function initializePage(page, level) {
   level = level || pages.length;
-
+  //maketoc(page);
   links = Array.prototype.slice.call(page.querySelectorAll("a"));
 
   links.forEach(async function (element) {
@@ -133,3 +133,38 @@ window.onload = function () {
     }
   }
 };
+
+// Table of Content
+function maketoc(page){
+  var ToC =
+      "<nav role=\"navigation\" class=\"table-of-contents\">" +
+      "<h2>On this page:</h2>" +
+      "<ul>";
+
+  var headings = page.querySelectorAll(".content > h2");
+  for (i = 0; i < headings.length; ++i) {
+    ToC = maketocLine(ToC, headings[i]);
+  }
+
+  ToC +=
+    "</ul>" +
+    "</nav>";
+
+  //page.querySelector(".content").prepend(ToC);
+  page.prepend(ToC);
+}
+function maketocLine(ToC, el) {
+  var newLine, title, link;
+  title = el.textContent;
+  link = "#" + el.getAttribute("id");
+  console.log(link +"-"+ title);
+  newLine =
+    "<li>" +
+      "<a href=\"" + link + "\">" +
+        title +
+      "</a>" +
+    "</li>";
+
+  ToC += newLine;
+  return ToC;
+}

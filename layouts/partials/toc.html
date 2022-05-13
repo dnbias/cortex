@@ -1,0 +1,8 @@
+{{ if ( gt .WordCount 400 ) }}
+<nav role="navigation" class="table-of-contents">
+    <header>
+    <h3>Contents</h3>
+    </header>
+    {{.TableOfContents}}
+</nav>
+{{ end }}
